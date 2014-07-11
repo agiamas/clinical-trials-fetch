@@ -2,7 +2,7 @@
 
   A software system designed to Extract data from clinicaltrials.gov, Transform it into a convenient to search data format and Load it into our MongoDB database. 
   
-  ETL is pulling all recent data from the RSS feed of clinicaltrials.gov, filtering for P2/P3 and active recruiting studies and storing them in separate collections based on if they are of interest to us or not.
+  ETL is pulling all recent data from the RSS feed of clinicaltrials.gov, scraping the actual result page, filtering for P2/P3 and active recruiting studies and storing them in separate collections based on if they are of interest to us or not.
 
   A REST API is exposed with the following methods. All results are JSON formatted.
 
