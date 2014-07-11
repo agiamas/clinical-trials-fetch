@@ -7,11 +7,17 @@
   A REST API is exposed with the following methods. All results are JSON formatted.
 ```
 [ROOT_API] = /api/v1
+```
 
+```
 [ROOT_API]/clinical_trials : fetches all clinical trials. Limited to 100 results to avoid blowing up the DB
+```
 
+```
 [ROOT_API]/clinical_trials/[CLINICAL_TRIAL_ID] : fetches all information for a specific clinical trial id i.e. NCT00000102
+```
 
+```
 [ROOT_API]/clinical_trials_search?condition=[CONDITION]&location=[LOCATION] : searches using a full-text index for [CONDITION] and [LOCATION] all trials and returns all trials that match the search query.
 ```
 
