@@ -1,3 +1,4 @@
+
 /**
  * Module dependencies.
  */
@@ -42,6 +43,7 @@ walk(models_path);
 require('./config/passport')(passport);
 
 var app = express();
+app.set('view engine', 'ejs');
 
 //express settings
 require('./config/express')(app, passport);

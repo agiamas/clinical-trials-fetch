@@ -1,3 +1,13 @@
 <section data-ng-controller="IndexController">
 	<h1>This is the home view</h1>
 </section>
+<section ng-controller="PhoneListCtrl">
+
+    <ul>
+        <li ng-repeat="phone in phones">
+            {{phone.name}}
+            <p>{{phone.snippet}}</p>
+        </li>
+    </ul>
+
+</section>

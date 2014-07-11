@@ -2,7 +2,7 @@
     "db": "mongodb://localhost/mean-travis",
     "port": 3001,
     "app": {
-        "name": "MEAN - A Modern Stack - Test on travis"
+        "name": "Min"
     },
     "facebook": {
         "clientID": "APP_ID",

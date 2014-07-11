@@ -73,8 +73,32 @@ module.exports = function(app, passport, auth) {
     //Finish with setting up the articleId param
     app.param('articleId', articles.article);
 
+    //Clinical Trials Routes
+    var ct = require('../app/controllers/clinical_trials');
+    app.get('/clinical_trials', ct.all);
+    app.get('/clinical_trials/:clinicaltrialId', ct.show);
+    app.get('/api/v1/clinical_trials_search/:ctcondition/:ctlocation', ct.search)
+
+    //http://localhost:3000/api/v1/clinical_trials_search/lung/greece
+    app.param('ctcondition', ct.clinical_trial_condition);
+    app.param('ctlocation', ct.clinical_trial_location);
+    app.param('clinicaltrialId', ct.clinical_trial);
+
+
+    //Items Routes
+    var items = require('../app/controllers/items');
+    app.get('/items', items.all);
+    app.post('/items', auth.requiresLogin, items.create);
+    app.get('/items/:itemId', items.show);
+    app.put('/items/:itemId', auth.requiresLogin, auth.article.hasAuthorization, items.update);
+    app.del('/items/:itemId', auth.requiresLogin, auth.article.hasAuthorization, items.destroy);
+
+    //Finish with setting up the articleId param
+    app.param('itemId', items.item);
+
     //Home route
     var index = require('../app/controllers/index');
     app.get('/', index.render);
+
 
 };

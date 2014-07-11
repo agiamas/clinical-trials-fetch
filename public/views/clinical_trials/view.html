@@ -1,0 +1,6 @@
+<section data-ng-controller="ClinicalTrialsController" data-ng-init="findOne()">
+	<span>{{clinical_trial.created | date:'medium'}}</span> /
+	<span>{{clinical_trial}}</span>
+	<!--<h2>{{clinical_trial.title}} <a data-ng-show="global.user._id == clinical_trial.user._id" href="/#!/clinical_trials/{{clinical_trial._id}}/edit">edit</a></h2>-->
+        <div>{{clinical_trial}}</div>
+</section>
