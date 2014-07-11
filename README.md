@@ -5,7 +5,7 @@
   ETL is pulling all recent data from the RSS feed of clinicaltrials.gov, scraping the actual result page, filtering for P2/P3 and active recruiting studies and storing them in separate collections based on if they are of interest to us or not.
 
   A REST API is exposed with the following methods. All results are JSON formatted.
-
+```
 [ROOT_API] = /api/v1
 
 [ROOT_API]/clinical_trials : fetches all clinical trials. Limited to 100 results to avoid blowing up the DB
@@ -13,7 +13,7 @@
 [ROOT_API]/clinical_trials/[CLINICAL_TRIAL_ID] : fetches all information for a specific clinical trial id i.e. NCT00000102
 
 [ROOT_API]/clinical_trials_search?condition=[CONDITION]&location=[LOCATION] : searches using a full-text index for [CONDITION] and [LOCATION] all trials and returns all trials that match the search query.
-
+```
 
 
 ## Future improvements
@@ -85,7 +85,7 @@ All configuration is specified in the [config](config/) folder, particularly the
 ### Environmental Settings
 
 There are three environments provided by default, __development__, __test__, and __production__. Each of these environments has the following configuration options:
-* __db__ - This is the name of the MongoDB database to use, and is set by default to __mean-dev__ for the development environment.
+* __db__ - This is the name of the MongoDB database to use, and is set to __clinical-trials__ for the development environment.
 * __app.name__ - This is the name of your app or website, and can be different for each environment. You can tell which environment you are running by looking at the TITLE attribute that your app generates.
 * __Social OAuth Keys__ - Facebook, GitHub, Google, Twitter. You can specify your own social application keys here for each platform:
 	* __clientID__
